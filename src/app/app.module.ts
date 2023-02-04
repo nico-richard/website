@@ -13,7 +13,6 @@ export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'about', component: AboutComponent },
   { path: 'page-not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'page-not-found' },
 ];
