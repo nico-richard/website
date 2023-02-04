@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
+
+h1 {
+  font-family: "Parisienne", cursive;
+  font-size: 5em;
+  display: inline-block;
+  background: radial-gradient(rgba(0, 177, 0, 0.39) 20%, white 70%);
+  border-radius: 999px;
+  padding: 150px;
+  margin: 0;
+  width: 100%;
+}
+
+header {
+}

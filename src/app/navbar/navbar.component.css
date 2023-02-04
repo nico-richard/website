@@ -1,0 +1,22 @@
+ul {
+  box-shadow: 0 2px 5px #ccc;
+  margin: 0;
+  display: flex;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: black;
+  display: block;
+  padding: 1rem 2rem;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: #eee;
+  cursor: pointer;
+  color: black;
+}
