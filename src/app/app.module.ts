@@ -8,9 +8,15 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { DataService } from './data.service';
+import { SkillComponent } from './skill/skill.component';
 
 export const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
+  {
+    path: '',
+    component: HomeComponent,
+    children: [{ path: 'skill/:id', component: SkillComponent }],
+  },
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent },
   { path: 'page-not-found', component: NotFoundComponent },
@@ -25,10 +31,11 @@ export const appRoutes: Routes = [
     AboutComponent,
     HomeComponent,
     NotFoundComponent,
+    SkillComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
   exports: [RouterModule],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

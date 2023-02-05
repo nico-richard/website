@@ -3,55 +3,20 @@
 </header>
 
 <main>
-  <section class="slogan">
-    <p>On my way to become a web developper</p>
-  </section>
-  <section>
-    <h2>Presentation</h2>
+  <section *ngFor="let section of sections" [ngClass]="section.class">
+    <h2>{{ section.title }}</h2>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, velit
-      vitae expedita ipsam provident beatae eum ullam? Veniam, deserunt quia?
+      {{ section.content }}
     </p>
-  </section>
-  <section>
-    <h2>Portfolio</h2>
-    <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae officia
-      similique nemo voluptatum distinctio ratione a nulla voluptatibus,
-      molestiae delectus deleniti repudiandae velit minus itaque voluptates
-      assumenda. Amet asperiores earum odit sapiente mollitia deleniti similique
-      veniam, accusantium nobis consequatur rerum veritatis recusandae
-      cupiditate. Cum voluptas sed nulla blanditiis odit itaque.
-    </p>
-  </section>
-  <section>
-    <h2>Skills</h2>
-    <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae officia
-      similique nemo voluptatum dia deleniti similique veniam, accusantium nobis
-      consequatur rerum veritatis recusandae cupiditate. Cum voluptas sed nulla
-      blanditiis odit itaque.
-    </p>
-  </section>
-  <section>
-    <h2>Experience</h2>
-    <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae officia
-      similique nemo voluptaiandae velit minus itaque voluptates assumenda. Amet
-      asperiores earum odit sapiente mollitia deleniti similique veniam,
-      accusantium nobis consequat sit amet consectetur, adipisicing elit. Quae
-      officia similique nemo voluptaiandae velit minus itaque voluptates
-      assumenda. Amet asperiores earum odit sapiente mollitia deleniti similique
-      veniam, accusantium nobis consequat sit amet consectetur, adipisicing
-      elit. Quae officia similique nemo voluptaiandae velit minus itaque
-      voluptates assumenda. Amet asperiores earum odit sapiente mollitia
-      deleniti similique veniam, accusantium nobis consequat sit amet
-      consectetur, adipisicing elit. Quae officia similique nemo voluptaiandae
-      velit minus itaque voluptates assumenda. Amet asperiores earum odit
-      sapiente mollitia deleniti similique veniam, accusantium nobis consequatur
-      rerum veritatis recusandae cupiditate. Cum voluptas sed nulla blanditiis
-      odit itaque.
-    </p>
+    <ul *ngIf="section.list">
+      <li
+        *ngFor="let item of section.list; let i = index"
+        [routerLink]="['/skill', i]"
+      >
+        {{ item.title }}
+      </li>
+    </ul>
+    <router-outlet *ngIf="section.title === 'Skills'"></router-outlet>
   </section>
 </main>
 
