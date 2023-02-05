@@ -2,20 +2,25 @@
 
 $hover-color: rgb(238,238,238)
 $section-background-color: rgb(255, 255, 255)
-$slogan-background-color: rgb(211, 211, 211)
+$slogan-background-color: #588157
+$slogan-background-hover-color: #476846
 $name-title-color: rgb(255,255,255)
-$section-color: rgb(136, 136, 136)
+$section-color: rgb(80, 80, 80)
 $section-hover-color: rgb(0, 0, 0)
 
+$home-bg-img: "../../assets/home_background.jpg"
+$objective-logo: "../../assets/objective.png"
+
 header
-  background-image: url("/assets/home_background.jpg")
+  background-image: url($home-bg-img)
   background-size: cover
   height: 100vh
   display: flex
   flex-direction: column
   justify-content: center
   opacity: 0.8
-  transition: opacity 0.5s
+  transition: opacity 1s
+  scroll-snap-align: start
 
   &:hover
     opacity: 1
@@ -37,7 +42,8 @@ main
     font-size: 1.4rem
     line-height: 2rem
     color: $section-color
-    transition: all 0.7s
+    transition: all 1s
+    scroll-snap-align: start
     &:hover
       background-color: $hover-color
       color: $section-hover-color
@@ -52,13 +58,14 @@ main
     gap: 2rem
     justify-content: center
     align-items: center
+    color: $section-hover-color
     p
       font-style: italic
     &:hover
-      background-color: $slogan-background-color
+      background-color: $slogan-background-hover-color
     &:after
       content: ""
-      background-image: url("/assets/objective.png")
+      background-image: url($objective-logo)
       background-size: cover
       height: 2rem
       width: 2rem
@@ -72,3 +79,8 @@ main
       &:hover
         text-decoration: underline
         cursor: pointer
+
+footer
+  scroll-snap-align: start
+  padding: 12rem 0
+  margin-bottom: 12rem
