@@ -11,7 +11,7 @@
     <ul *ngIf="section.list">
       <li
         *ngFor="let item of section.list; let i = index"
-        [routerLink]="['/skill', i]"
+        (click)="onClick(i)"
       >
         {{ item.title }}
       </li>

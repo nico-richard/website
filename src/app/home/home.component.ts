@@ -19,4 +19,12 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.sections = this.dataService.sections;
   }
+
+  onClick(i: number) {
+    if (this.router.url.includes('skill/' + i)) {
+      this.router.navigate(['/']);
+    } else {
+      this.router.navigate(['/skill', i]);
+    }
+  }
 }

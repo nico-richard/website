@@ -2,47 +2,52 @@
 
 $hover-color: rgb(238,238,238)
 $section-background-color: rgb(255, 255, 255)
-$slogan-background-color: #588157
-$slogan-background-hover-color: #476846
+$slogan-background-color: #506439
+$slogan-background-hover-color: #86962c
 $name-title-color: rgb(255,255,255)
 $section-color: rgb(80, 80, 80)
 $section-hover-color: rgb(0, 0, 0)
 
 $home-bg-img: "../../assets/home_background.jpg"
 $objective-logo: "../../assets/objective.png"
+$objective-logo-white: "../../assets/objective-white.png"
 
 header
   background-image: url($home-bg-img)
   background-size: cover
-  height: 100vh
-  display: flex
-  flex-direction: column
-  justify-content: center
-  opacity: 0.8
-  transition: opacity 1s
-  scroll-snap-align: start
+  background-position-y: -5rem
+  background-position-x: center
+  filter: blur(1px)
+  height: 90%
+  width: 100%
+  transition: all 0.5s
+  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 50% 100%, 0% 80%)
+  position: absolute
+  top: 0
 
   &:hover
-    opacity: 1
-    h1
-      text-shadow: 1px 1px black
-      transition: text-shadow 0.5s
+    filter: none
 
   h1
-    text-shadow: none
+    margin: 0
+    position: absolute
+    top: 40%
+    left: 50%
+    transform: translateX(-50%)
+    text-shadow: 1px 1px black
     font-family: "Parisienne", cursive
     font-size: 5rem
     color: $name-title-color
 
 main
   section
+    transition: all 0.5s
     overflow: hidden
     padding: 5rem max(5rem, 20%)
     font-family: 'georgia', sans serif
     font-size: 1.4rem
     line-height: 2rem
     color: $section-color
-    transition: all 1s
     scroll-snap-align: start
     &:hover
       background-color: $hover-color
@@ -52,20 +57,27 @@ main
     p
       text-align: justify
   .slogan
-    padding: 2rem max(5rem, 20%)
+    padding: 90vh max(5rem, 20%) 2rem
+    z-index: -1
     background-color: $slogan-background-color
     display: flex
-    gap: 2rem
+    gap: 1rem
     justify-content: center
     align-items: center
-    color: $section-hover-color
+    color: white
+    font-weight: bold
     p
       font-style: italic
     &:hover
       background-color: $slogan-background-hover-color
+      color: black
+      &::after
+        background-image: url($objective-logo)
+
     &:after
+      transition: all 0.5s
       content: ""
-      background-image: url($objective-logo)
+      background-image: url($objective-logo-white)
       background-size: cover
       height: 2rem
       width: 2rem
@@ -84,3 +96,7 @@ footer
   scroll-snap-align: start
   padding: 12rem 0
   margin-bottom: 12rem
+
+@media screen and (max-width: 1600px)
+  header
+    background-position-y: 0
