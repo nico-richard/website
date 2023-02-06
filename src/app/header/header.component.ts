@@ -3,11 +3,11 @@ import { DataService, Section } from '../data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.sass'],
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.sass'],
 })
-export class HomeComponent implements OnInit {
+export class HeaderComponent implements OnInit {
   sections: Section[] = [];
 
   constructor(

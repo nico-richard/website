@@ -12,21 +12,27 @@ $home-bg-img: "../../assets/home_background.jpg"
 $objective-logo: "../../assets/objective.png"
 $objective-logo-white: "../../assets/objective-white.png"
 
+@keyframes unblur
+  0%
+    filter: blur(2px)
+  100%
+    filter: blur(0px)
+
 header
   background-image: url($home-bg-img)
   background-size: cover
   background-position-y: -5rem
   background-position-x: center
-  filter: blur(1px)
-  height: 90%
-  width: 100%
+  height: 90vh
+  width: 100vw
   transition: all 0.5s
+  filter: blur(2px)
   clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 50% 100%, 0% 80%)
   position: absolute
   top: 0
 
-  &:hover
-    filter: none
+  animation: 1s 2s unblur
+  animation-fill-mode: forwards
 
   h1
     margin: 0
@@ -34,7 +40,7 @@ header
     top: 40%
     left: 50%
     transform: translateX(-50%)
-    text-shadow: 1px 1px black
+    text-shadow: 1px 1px #555
     font-family: "Parisienne", cursive
     font-size: 5rem
     color: $name-title-color
@@ -68,11 +74,6 @@ main
     font-weight: bold
     p
       font-style: italic
-    &:hover
-      background-color: $slogan-background-hover-color
-      color: black
-      &::after
-        background-image: url($objective-logo)
 
     &:after
       transition: all 0.5s
@@ -81,21 +82,21 @@ main
       background-size: cover
       height: 2rem
       width: 2rem
-  ul
-    font-size: 1.5rem
-    font-weight: bold
-    line-height: 3rem
-    li
-      text-align: left
-      list-style-type: disc
-      &:hover
-        text-decoration: underline
-        cursor: pointer
+//   ul
+//     font-size: 1.5rem
+//     font-weight: bold
+//     line-height: 3rem
+//     li
+//       text-align: left
+//       list-style-type: disc
+//       &:hover
+//         text-decoration: underline
+//         cursor: pointer
 
-footer
-  scroll-snap-align: start
-  padding: 12rem 0
-  margin-bottom: 12rem
+// footer
+//   scroll-snap-align: start
+//   padding: 12rem 0
+//   margin-bottom: 12rem
 
 @media screen and (max-width: 1600px)
   header

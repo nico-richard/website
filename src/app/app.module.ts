@@ -6,7 +6,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
-import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DataService } from './data.service';
 import { SkillComponent } from './skill/skill.component';
@@ -14,7 +14,7 @@ import { SkillComponent } from './skill/skill.component';
 export const appRoutes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: HeaderComponent,
     children: [{ path: 'skill/:id', component: SkillComponent }],
   },
   { path: 'contact', component: ContactComponent },
@@ -29,7 +29,7 @@ export const appRoutes: Routes = [
     NavbarComponent,
     ContactComponent,
     AboutComponent,
-    HomeComponent,
+    HeaderComponent,
     NotFoundComponent,
     SkillComponent,
   ],
