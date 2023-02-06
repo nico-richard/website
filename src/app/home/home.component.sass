@@ -18,17 +18,16 @@ $objective-logo-white: "../../assets/objective-white.png"
   100%
     backdrop-filter: blur(0px)
 
-header
+.header-image
   background-image: url($home-bg-img)
   background-size: cover
-  background-position-y: -5rem
+  background-position-y: center
   background-position-x: center
   height: 90vh
-  width: 100vw
+  width: 100%
   transition: all 0.5s
   clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 50% 100%, 0% 80%)
-  position: absolute
-  top: 0
+  position: static
   &::after
     content: ""
     position: absolute
@@ -55,8 +54,8 @@ header
   font-family: 'georgia', sans serif
   font-size: 1.4rem
   font-style: italic
-  position: relative
-  top: 50vh
+  // position: relative
+  margin-top: -40vh
   height: 50vh
   z-index: -1
   background-color: $slogan-background-color
@@ -83,20 +82,47 @@ header
     height: 2rem
     width: 2rem
 
-@media screen and (max-width: 1600px)
-  header
-    background-position-y: 0
+.presentation,
+.experience,
+.skill,
+.portfolio
+  background-color: #ddd
+  overflow: hidden
+  margin: 2rem 0
+  padding: 2rem
+  h1
+    text-align: center
+
+.skill
+  ul
+    padding-left: 5rem
+    li
+      line-height: 2rem
+      font-size: 1.5rem
+      a:hover
+        text-decoration: underline
+        cursor: pointer
+  aside
+    text-align: center
 
 @media screen and (max-width: 700px)
-  header
+  .header-image
     height: 85vh
+    h1
+      font-size: 4rem
   .slogan
     flex-direction: column
     align-items: center
 
 @media screen and (max-width: 500px)
-  header
-    h1
-      font-size: 4rem
   .slogan
-    font-size: 1.2rem
+    p
+      font-size: 1.2rem
+
+@media screen and (max-width: 400px)
+  .header-image
+    h1
+      font-size: 3rem
+  .slogan
+    p
+      font-size: 1.1rem

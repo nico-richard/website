@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { DataService, Section } from '../data.service';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-skill',
@@ -9,7 +9,6 @@ import { DataService, Section } from '../data.service';
 })
 export class SkillComponent implements OnInit {
   id: number;
-  section: Section;
   title: string;
   description: string;
 
@@ -19,11 +18,8 @@ export class SkillComponent implements OnInit {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.id = +params.get('id')!;
 
-      this.section = this.data.sections.filter((element) => {
-        return element.title === 'Skills';
-      })[0];
-      this.title = this.section.list![this.id].title;
-      this.description = this.section.list![this.id].description;
+      this.title = this.data.sections.skill.list![this.id].title;
+      this.description = this.data.sections.skill.list![this.id].description;
     });
   }
 }

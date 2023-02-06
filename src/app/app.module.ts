@@ -4,21 +4,33 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule, Routes } from '@angular/router';
-import { ContactComponent } from './contact/contact.component';
-import { AboutComponent } from './about/about.component';
-import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DataService } from './data.service';
 import { SkillComponent } from './skill/skill.component';
+import { PresentationComponent } from './presentation/presentation.component';
+import { ExperienceComponent } from './experience/experience.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 export const appRoutes: Routes = [
   {
     path: '',
-    component: HeaderComponent,
-    children: [{ path: 'skill/:id', component: SkillComponent }],
+    component: HomeComponent,
+    children: [
+      { path: ':id', component: SkillComponent, outlet: 'skill' },
+      // {
+      //   path: 'experience/:id',
+      //   component: ExperienceComponent,
+      //   outlet: 'experience',
+      // },
+      // {
+      //   path: 'portfolio/:id',
+      //   component: PortfolioComponent,
+      //   outlet: 'portfolio',
+      // },
+    ],
   },
-  { path: 'contact', component: ContactComponent },
-  { path: 'about', component: AboutComponent },
+  { path: 'xp', component: ExperienceComponent },
   { path: 'page-not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'page-not-found' },
 ];
@@ -27,11 +39,12 @@ export const appRoutes: Routes = [
   declarations: [
     AppComponent,
     NavbarComponent,
-    ContactComponent,
-    AboutComponent,
-    HeaderComponent,
+    HomeComponent,
     NotFoundComponent,
     SkillComponent,
+    PresentationComponent,
+    ExperienceComponent,
+    PortfolioComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
   exports: [RouterModule],
