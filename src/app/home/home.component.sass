@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap")
 
 $hover-color: rgb(238,238,238)
-$section-background-color: rgb(255, 255, 255)
+$section-background-color: #e4efff
 $slogan-background-color: #506439
 $slogan-background-hover-color: #86962c
 $name-title-color: rgb(255,255,255)
@@ -82,14 +82,37 @@ $objective-logo-white: "../../assets/objective-white.png"
     height: 2rem
     width: 2rem
 
+.content
+  display: flex
+  .main-content
+    padding: 1rem
+  .navbar
+    min-width: 10rem
+    margin-top: 2rem
+    ul
+      position: sticky
+      top: 2rem
+      list-style-type: none
+      margin: 0
+      padding: 0
+    li
+      margin-bottom: 2rem
+    a
+      text-decoration: none
+      color: black
+      &:hover
+        font-weight: bold
+        cursor: pointer
+
 .presentation,
 .experience,
 .skill,
 .portfolio
-  background-color: #ddd
+  background-color: $section-background-color
   overflow: hidden
   margin: 2rem 0
   padding: 2rem
+  border-radius: 5px
   h1
     text-align: center
 
@@ -104,6 +127,10 @@ $objective-logo-white: "../../assets/objective-white.png"
         cursor: pointer
   aside
     text-align: center
+
+footer
+  text-align: center
+  margin: 2rem 0
 
 @media screen and (max-width: 700px)
   .header-image
