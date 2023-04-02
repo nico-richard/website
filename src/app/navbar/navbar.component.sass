@@ -1,9 +1,33 @@
-ul
-    display: flex
-    gap: 1rem
-    font-size: 1.5rem
-    li
+// ul
+//     display: flex
+//     gap: 1rem
+//     font-size: 1.5rem
+//     li
+//         list-style-type: none
+//         a
+//             text-decoration: none
+//             color: black
+
+.navbar
+    min-width: 12rem
+    margin-top: 2rem
+    margin-right: 2rem
+    text-align: right
+    font-size: 1.4rem
+    ul
+        position: sticky
+        top: 2rem
         list-style-type: none
-        a
-            text-decoration: none
-            color: black
+        margin: 0
+        padding: 0
+    li
+        margin-bottom: 2rem
+    a
+        text-decoration: none
+        color: black
+        padding: 1rem
+        border-radius: 5px
+        &:hover
+            color: white
+            cursor: pointer
+            background-color: #5D7443

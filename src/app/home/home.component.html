@@ -1,60 +1,61 @@
 <section class="header-image">
-    <h1>I'm Nicolas</h1>
+  <h1>I'm Nicolas</h1>
 </section>
 
 <section class="slogan-container">
-    <div class="slogan">
-        <p>On my way to become</p>
-        <p>a web developper</p>
-    </div>
+  <div class="slogan">
+    <p>On my way to become</p>
+    <p>a web developper</p>
+  </div>
 </section>
 
-<div class="content">
-    <div class="main-content">
-        <section class="presentation">
-            <h1>Presentation</h1>
-            <p>
-                {{ presentation.content }}
-            </p>
-        </section>
-        <section class="experience">
-            <h1>Experiences</h1>
-            <p>
-                {{ experience.content }}
-            </p>
-            <router-outlet name="experience"></router-outlet>
-        </section>
-        <section class="skill">
-            <h1>Skills</h1>
-            <ul *ngIf="skill.list">
-                <li *ngFor="let skill of skill.list; let i = index">
-                    <a (click)="onSelectSkill(i)">
-                        {{ skill.title }}
-                    </a>
-                </li>
-            </ul>
-            <aside>
-                <router-outlet name="skill"></router-outlet>
-            </aside>
-        </section>
-        <section class="portfolio">
-            <h1>Portfolio</h1>
-            <p>
-                {{ portfolio.content }}
-            </p>
-            <router-outlet name="portfolio"></router-outlet>
-        </section>
-    </div>
-    <div class="navbar">
-        <ul>
-            <li><a routerLink="/presentation">Presentation</a></li>
-            <li><a routerLink="/experiences">Experiences</a></li>
-            <li><a routerLink="/skills">Skills</a></li>
-            <li><a routerLink="/portfolio">Portfolio</a></li>
-            <li><a routerLink="/achievements">Achievements</a></li>
-            <li><a routerLink="/mini-games">Mini games</a></li>
-        </ul>
-    </div>
+<div class="main-content">
+  <div class="section-content">
+    <section class="presentation">
+      <h1>Presentation</h1>
+      <p>
+        {{ presentation.content }}
+      </p>
+    </section>
+    <section class="experience">
+      <h1>Experiences</h1>
+      <p>
+        {{ experience.content }}
+      </p>
+      <router-outlet name="experience"></router-outlet>
+    </section>
+    <section class="skill">
+      <h1>Skills</h1>
+      <ul *ngIf="skill.list">
+        <li *ngFor="let skill of skill.list; let i = index">
+          <a (click)="onSelectSkill(i)">
+            {{ skill.title }}
+          </a>
+        </li>
+      </ul>
+      <aside>
+        <router-outlet name="skill"></router-outlet>
+      </aside>
+    </section>
+    <section class="portfolio">
+      <h1>Portfolio</h1>
+      <p>
+        {{ portfolio.content }}
+      </p>
+      <router-outlet name="portfolio"></router-outlet>
+    </section>
+  </div>
+  <app-navbar></app-navbar>
+  <!-- <div class="navbar">
+    <ul>
+      <li><a routerLink="section/presentation">Presentation</a></li>
+      <li><a routerLink="section/experiences">Experiences</a></li>
+      <li><a routerLink="section/skills">Skills</a></li>
+      <li><a routerLink="section/portfolio">Portfolio</a></li>
+      <li><a routerLink="section/achievements">Achievements</a></li>
+      <li><a routerLink="section/mini-games">Mini games</a></li>
+    </ul>
+  </div> -->
 </div>
 <!-- <main>
   <section *ngFor="let section of sections" [ngClass]="section.class">

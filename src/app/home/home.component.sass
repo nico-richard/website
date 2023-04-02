@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap")
 
 $hover-color: rgb(238,238,238)
-$section-background-color: #e4efff
-$slogan-background-color: #506439
+$section-background-color: #CEDABF
+$slogan-background-color: #5D7443
 $slogan-background-hover-color: #86962c
-$name-title-color: rgb(255,255,255)
+$name-title-color: #edeff3
 $section-color: rgb(80, 80, 80)
 $section-hover-color: rgb(0, 0, 0)
 
@@ -51,9 +51,10 @@ $objective-logo-white: "../../assets/objective-white.png"
     white-space: nowrap
 
 .slogan-container
-  font-family: 'georgia', sans serif
+  font-family: 'garamond', sans serif
   font-size: 1.4rem
   font-style: italic
+  letter-spacing: 0.2rem
   // position: relative
   margin-top: -40vh
   height: 50vh
@@ -64,6 +65,7 @@ $objective-logo-white: "../../assets/objective-white.png"
   align-items: flex-end
   color: white
   font-weight: bold
+  user-select: none
   .slogan
     display: flex
     margin-bottom: 5vh
@@ -82,27 +84,10 @@ $objective-logo-white: "../../assets/objective-white.png"
     height: 2rem
     width: 2rem
 
-.content
+.main-content
   display: flex
-  .main-content
+  .section-content
     padding: 1rem
-  .navbar
-    min-width: 10rem
-    margin-top: 2rem
-    ul
-      position: sticky
-      top: 2rem
-      list-style-type: none
-      margin: 0
-      padding: 0
-    li
-      margin-bottom: 2rem
-    a
-      text-decoration: none
-      color: black
-      &:hover
-        font-weight: bold
-        cursor: pointer
 
 .presentation,
 .experience,
