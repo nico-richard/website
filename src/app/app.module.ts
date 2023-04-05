@@ -23,7 +23,9 @@ import { FindTheNumberComponent } from './minigames/findTheNumber/findTheNumber.
 import { ReactiveFormsModule } from '@angular/forms'
 import { ButtonComponent } from './graphic-components/button/button.component';
 import { CovidSweeperComponent } from './minigames/covid-sweeper/covid-sweeper.component';
-import { SweeperButtonComponent } from './graphic-components/sweeper-button/sweeper-button.component'
+import { SweeperButtonComponent } from './graphic-components/sweeper-button/sweeper-button.component';
+import { LinkComponent } from './graphic-components/link/link.component';
+import { PostComponent } from './blog/post/post.component'
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { SweeperButtonComponent } from './graphic-components/sweeper-button/swee
     ButtonComponent,
     CovidSweeperComponent,
     SweeperButtonComponent,
+    LinkComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,
