@@ -2,6 +2,7 @@ $green: #5D7443
 $black: #222
 $white: #eee
 $dark-green: #506439
+$dark-red: #970000
 
 button
     margin: 0
@@ -16,10 +17,8 @@ button
         cursor: pointer
     &:active
         background-color: $white
-    &.red
-        background-color: $black
-    &.green
-        background-color: $white
+    &.game-lost
+        background-color: $dark-red
 
 :host
     display: inline-block

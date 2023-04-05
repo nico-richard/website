@@ -7,13 +7,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core'
 })
 export class SweeperButtonComponent {
   @Input() disabled = false
-  @Input() cellType: string
+  @Input() type: string
+  @Input() class = ''
+
   @Output() customClick = new EventEmitter()
-  cellClass = ''
 
   onClick() {
     this.customClick.emit()
-    console.log(`Button ${this.cellType} clicked`)
-    this.cellClass = this.cellType === '🦠' ? 'red' : 'green'
+    console.log(`Button ${this.type} clicked`)
   }
 }

@@ -1,3 +1,13 @@
+<div class="settings">
+  <label for="difficulty">Difficulty</label>
+  <input
+    id="difficulty"
+    type="number"
+    (change)="onDifficultyChange($event)"
+    value="10"
+  />
+  <app-button (click)="onStart()">Start</app-button>
+</div>
 <div class="info-message" *ngIf="infoMessage">
   {{ infoMessage }}
 </div>
@@ -5,11 +15,12 @@
   <div class="row" *ngFor="let row of board; let r = index">
     <div class="box" *ngFor="let cell of row; let c = index">
       <app-sweeper-button
-        [cellType]="cell.type"
+        [type]="cell.type"
+        [class]="cell.class"
         (customClick)="onOpenCell(cell)"
         [disabled]="cell.isOpen"
       >
-        <div class="debug-text" *ngIf="debugMode">
+        <div class="debug-text" *ngIf="debugMode && !gameLost">
           {{ cell.type }}
         </div>
       </app-sweeper-button>
