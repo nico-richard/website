@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core'
 import { FormControl } from '@angular/forms'
 
 @Component({
-  selector: 'app-game1',
-  templateUrl: './game1.component.html',
-  styleUrls: ['./game1.component.sass'],
+  selector: 'app-findTheNumber',
+  templateUrl: './findTheNumber.component.html',
+  styleUrls: ['./findTheNumber.component.sass'],
 })
-export class Game1Component implements OnInit {
+export class FindTheNumberComponent implements OnInit {
   numberToGuess: number
   userNumber = new FormControl(0, { nonNullable: true })
   clue: string

@@ -7,7 +7,7 @@ import { RouterModule, Routes } from '@angular/router'
 import { HomeComponent } from './home/home.component'
 import { NotFoundComponent } from './not-found/not-found.component'
 import { DataService } from './data.service'
-import { SkillComponent } from './home/skill/skill.component'
+import { SkillComponent } from './skills/skill/skill.component'
 import { PresentationComponent } from './presentation/presentation.component'
 import { ExperienceComponent } from './experience/experience.component'
 import { PortfolioComponent } from './portfolio/portfolio.component'
@@ -19,8 +19,11 @@ import { SkillsComponent } from './skills/skills.component'
 import { BlogComponent } from './blog/blog.component'
 import { DataComponent } from './data/data.component'
 import { SectionComponent } from './section/section.component'
-import { Game1Component } from './minigames/game1/game1.component'
+import { FindTheNumberComponent } from './minigames/findTheNumber/findTheNumber.component'
 import { ReactiveFormsModule } from '@angular/forms'
+import { ButtonComponent } from './graphic-components/button/button.component';
+import { CovidSweeperComponent } from './minigames/covid-sweeper/covid-sweeper.component';
+import { SweeperButtonComponent } from './graphic-components/sweeper-button/sweeper-button.component'
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { ReactiveFormsModule } from '@angular/forms'
     BlogComponent,
     DataComponent,
     SectionComponent,
-    Game1Component,
+    FindTheNumberComponent,
+    ButtonComponent,
+    CovidSweeperComponent,
+    SweeperButtonComponent,
   ],
   imports: [
     BrowserModule,

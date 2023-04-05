@@ -1,0 +1,20 @@
+<div class="info-message" *ngIf="infoMessage">
+  {{ infoMessage }}
+</div>
+<div class="grid">
+  <div class="row" *ngFor="let row of board; let r = index">
+    <div class="box" *ngFor="let cell of row; let c = index">
+      <app-sweeper-button
+        [cellType]="cell.type"
+        (customClick)="onOpenCell(cell)"
+        [disabled]="cell.isOpen"
+      >
+        <div class="debug-text" *ngIf="debugMode">
+          {{ cell.type }}
+        </div>
+      </app-sweeper-button>
+    </div>
+  </div>
+</div>
+<app-button (click)="onToggleDebug()">Toggle Debug Mode</app-button>
+<app-button (click)="onReset()">Reset The Game</app-button>

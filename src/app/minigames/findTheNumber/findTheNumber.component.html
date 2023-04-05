@@ -1,0 +1,12 @@
+<h3>Guess the number</h3>
+<label for="userNumber">Enter a number : </label>
+<input id="userNumber" type="number" [formControl]="userNumber" />
+
+<!-- <p [hidden]="isFound">{{ userNumber.value }}</p> -->
+<p>{{ clue }}</p>
+<app-button (click)="testUserNumber()" [disabled]="isFound">Test</app-button>
+<app-button (click)="onRefresh()">Refresh Game</app-button>
+<hr />
+<h3>Debug section</h3>
+<label for="numberToGuess">Answer</label>
+<p id="numberToGuess">{{ numberToGuess }}</p>

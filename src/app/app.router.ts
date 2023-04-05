@@ -2,7 +2,6 @@ import { Routes } from '@angular/router'
 import { ExperienceComponent } from './experience/experience.component'
 import { HomeComponent } from './home/home.component'
 import { NotFoundComponent } from './not-found/not-found.component'
-import { SkillComponent } from './home/skill/skill.component'
 import { PresentationComponent } from './presentation/presentation.component'
 import { PortfolioComponent } from './portfolio/portfolio.component'
 import { AchievementComponent } from './achievement/achievement.component'
@@ -11,7 +10,9 @@ import { SkillsComponent } from './skills/skills.component'
 import { BlogComponent } from './blog/blog.component'
 import { DataComponent } from './data/data.component'
 import { SectionComponent } from './section/section.component'
-import { Game1Component } from './minigames/game1/game1.component'
+import { FindTheNumberComponent } from './minigames/findTheNumber/findTheNumber.component'
+import { SkillComponent } from './skills/skill/skill.component'
+import { CovidSweeperComponent } from './minigames/covid-sweeper/covid-sweeper.component'
 
 export const appRoutes: Routes = [
   {
@@ -32,7 +33,10 @@ export const appRoutes: Routes = [
       {
         path: 'mini-games',
         component: MinigamesComponent,
-        children: [{ path: 'game1', component: Game1Component }],
+        children: [
+          { path: 'findTheNumber', component: FindTheNumberComponent },
+          { path: 'covidSweeper', component: CovidSweeperComponent },
+        ],
       },
       { path: 'blog', component: BlogComponent },
     ],
