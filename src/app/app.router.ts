@@ -13,6 +13,7 @@ import { SectionComponent } from './section/section.component'
 import { FindTheNumberComponent } from './minigames/findTheNumber/findTheNumber.component'
 import { SkillComponent } from './skills/skill/skill.component'
 import { CovidSweeperComponent } from './minigames/covid-sweeper/covid-sweeper.component'
+import { NewHomeComponent } from './new-home/new-home.component'
 
 export const appRoutes: Routes = [
   {
@@ -20,6 +21,7 @@ export const appRoutes: Routes = [
     component: HomeComponent,
     children: [{ path: ':id', component: SkillComponent, outlet: 'skill' }],
   },
+  { path: 'new-home', component: NewHomeComponent },
   {
     path: 'section',
     component: SectionComponent,

@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Sometype+Mono:wght@400;700&display=swap')
+
+$home-bg-img: "../../assets/background.jpg"
+
+h1
+    font-family: 'Open Sans', sans-serif
+    font-family: 'Sometype Mono', monospace
+    position: absolute
+    margin: 0
+    padding: 0
+    transform: translate(-50%, -50%)
+    background-image: url($home-bg-img)
+    background-size: 110%
+    -webkit-background-clip: text
+    color: transparent
+    font-weight: 700
+    &.first-name
+        font-size: 15vw
+        top: 10vw
+        left: 10vw
+        animation: 5s cubic-bezier(0.7, 0, 0, 1) infinite alternate travel
+    &.last-name
+        font-size: 16vw
+        top: 21vw
+        left: 20vw
+        // filter: drop-shadow(0 0 10px #525252)
+        animation: 5s cubic-bezier(0.7, 0, 0, 1) infinite alternate-reverse travel
+
+    @keyframes travel
+        from
+            transform: translate(0vw, -50%)
+        to
+            transform: translate(10vw, -50%)

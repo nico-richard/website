@@ -25,7 +25,8 @@ import { ButtonComponent } from './graphic-components/button/button.component'
 import { CovidSweeperComponent } from './minigames/covid-sweeper/covid-sweeper.component'
 import { SweeperButtonComponent } from './graphic-components/sweeper-button/sweeper-button.component'
 import { LinkComponent } from './graphic-components/link/link.component'
-import { PostComponent } from './blog/post/post.component'
+import { PostComponent } from './blog/post/post.component';
+import { NewHomeComponent } from './new-home/new-home.component'
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { PostComponent } from './blog/post/post.component'
     SweeperButtonComponent,
     LinkComponent,
     PostComponent,
+    NewHomeComponent,
   ],
   imports: [
     BrowserModule,
